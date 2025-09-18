@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj*
+*.user
+*.ncb
+*.opendb
+*.VC.db
+
+# CMake
+/out/
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+
+# Binaries
+*.exe
+*.dll
+*.obj
+*.pdb
+*.lib
+*.so
+*.a
+*.out
+
+# Logs
+*.log
