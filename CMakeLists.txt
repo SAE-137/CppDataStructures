@@ -12,7 +12,7 @@ endif()
 project ("CppDataStructures")
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CppDataStructures "CppDataStructures.cpp" "CppDataStructures.h")
+add_executable (CppDataStructures "CppDataStructures.cpp" "CppDataStructures.h" "include/nodes/ForwardListNode.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CppDataStructures PROPERTY CXX_STANDARD 20)

@@ -5,4 +5,6 @@
 
 #include <iostream>
 
+#include"include/nodes/ForwardListNode.h"
+
 // TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
