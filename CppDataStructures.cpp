@@ -3,10 +3,13 @@
 
 #include "CppDataStructures.h"
 
-using namespace std;
 
-int main()
-{
-	cout << "Hello CMake." << endl;
-	return 0;
+
+int main() {
+	ForwardList<int> list;
+
+	for (int i = 0; i < 10; ++i) {
+		list.pushBack(i);
+	}
+	std::cout << list.size();
 }

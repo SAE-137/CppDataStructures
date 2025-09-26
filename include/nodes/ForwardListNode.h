@@ -5,17 +5,17 @@ template<typename T>
 class ForwardListNode
 {
 	T m_value;
-	std::unique_ptr<ForwardListNode> m_next;
+	std::unique_ptr<ForwardListNode<T>> m_next;
 
 public:
 	template<typename U>
 	ForwardListNode(U&& value) : m_value(std::forward<U>(value)), m_next(nullptr) {}
 
-	ForwedListNode(const ForwardListNode&) = delete;
-	ForwardListNode operator=(const ForwardListNode&) = delete;
+	ForwardListNode(const ForwardListNode<T>&) = delete;
+	ForwardListNode<T>& operator=(const ForwardListNode<T>&) = delete;
 
-	ForwardListNode(ForwardListNode&&) noexcept = default;
-	ForwardListNode operator=(ForwardListNode) noexcept = default;
+	ForwardListNode(ForwardListNode<T>&&) noexcept = default;
+	ForwardListNode<T>& operator=(ForwardListNode<T>&&) noexcept = default;
 
 	~ForwardListNode() = default;
 
@@ -23,14 +23,14 @@ public:
 		m_value = value;
 	}
 
-	void setNext(std::unique_ptr<ForwardListNode>&& next) {
+	void setNext(std::unique_ptr<ForwardListNode<T>>&& next) {
 		m_next = std::move(next);
 	}
 
 	const T& getValue() const { return m_value; }
 	T& getValue() { return m_value; }
 
-	std::unique_ptr<ForwardListNode> getNext() const { return m_next.get(); }
+	ForwardListNode<T>* getNext() const { return m_next.get(); } 
 
 	bool hasNext() const { return m_next != nullptr; }
 };
