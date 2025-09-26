@@ -9,7 +9,13 @@ class ForwardListNode
 
 public:
 	template<typename U>
-	ForwardListNode(U&& value) : m_value(std::forward<U>(value), m_next(nullptr) {}
+	ForwardListNode(U&& value) : m_value(std::forward<U>(value)), m_next(nullptr) {}
+
+	ForwedListNode(const ForwardListNode&) = delete;
+	ForwardListNode operator=(const ForwardListNode&) = delete;
+
+	ForwardListNode(ForwardListNode&&) noexcept = default;
+	ForwardListNode operator=(ForwardListNode) noexcept = default;
 
 	~ForwardListNode() = default;
 
